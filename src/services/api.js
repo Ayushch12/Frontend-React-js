@@ -21,20 +21,21 @@ export const getCategories = async () => {
     return response.data;
 };
 
+
 export const addProduct = async (product) => {
     const response = await axiosInstance.post("/products", product);
     return response.data;
 };
 
-export const updateProduct = async (id, product) => {
-    const response = await axiosInstance.put(`/products/${id}`, product);
+export const updateProductApi = async (product) => {
+    const response = await axiosInstance.put(`/products/${product.id}`, product);
     return response.data;
 };
 
-export const deleteProduct = async (id) => {
-    const response = await axiosInstance.delete(`/products/${id}`);
-    return response.data;
+export const deleteProductApi = async (id) => {
+    await axiosInstance.delete(`/products/${id}`);
 };
+
 
 export const addCategory = async (category) => {
     const response = await axiosInstance.post("/categories", category);

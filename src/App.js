@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
 import ProductTable from './components/ProductTable';
+import Typography from '@mui/material/Typography';
 
 function App() {
     return (
@@ -10,7 +11,13 @@ function App() {
             <CssBaseline />
             <div>
                 <header style={{ padding: '1rem', textAlign: 'center' }}>
-                    <h1>Product and Category Management</h1>
+                <Typography
+                        variant="h4"
+                        component="h1"
+                        style={{ fontWeight: 'bold', color: theme.palette.primary.main }}
+                    >
+                        Product and Category Management
+                    </Typography>
                 </header>
                 <main style={{ padding: '2rem' }}>
                     <ProductTable />
